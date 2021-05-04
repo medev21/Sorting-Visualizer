@@ -1,23 +1,29 @@
-const bubbleSort = (arr) => {
+// import { UseStores } from '../mobx/UseStore';
 
-    let temp;
+// const { bubbleSortStore } = UseStores();
 
-    for(let i = 0; i < arr.length; i++){
+// export const bubbleSort = (arr) => {
 
-        for(let j=1; j < arr.length; j++){
-            if(arr[j-1] > arr[j]){
-                temp = arr[j-1];
-                arr[j-1] = arr[j];
-                arr[j] = temp;
-            }
-        }
+//     let temp;
 
-    }
+//     for(let i = 0; i < arr.length; i++){
 
-    return arr;
+//         for(let j=1; j < arr.length; j++){
 
-};
+//             bubbleSortStore.setCurrentElement(arr[j]);
+//             if(arr[j-1] > arr[j]){
+//                 temp = arr[j-1];
+//                 arr[j-1] = arr[j];
+//                 arr[j] = temp;
+//             }
+//         }
 
-// const animate = () => {};
+//     }
 
-console.log(bubbleSort([5, 20, 10, 14, 3, 2]));
+//     return arr;
+
+// };
+
+// // const animate = () => {};
+
+// // console.log(bubbleSort([5, 20, 10, 14, 3, 2]));
