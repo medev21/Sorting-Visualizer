@@ -12,12 +12,15 @@ class ArrayStore {
 
     arr = [5, 20, 10, 14, 3, 2];
 
-    swap = (prev, current) => {
-        console.log("SWAPPING FROM ARRAYSTORE LINE 13");
+    swap(prev, current) {
         const temp = this.arr[prev];
         this.arr[prev] = this.arr[current];
         this.arr[current] = temp;
 
+    }
+
+    compare(i, j, colorCompare) {
+        // console.log(i, j , colorCompare)
     }
 }
 

@@ -1,16 +1,16 @@
-export const bubbleSort = function*(arrStore) {
+export const bubbleSort = function *(arrStore) {
 
     const arr = arrStore.arr;
     // let temp;
     const colorCompare = 'red';
 
     for(let i = 0; i < arr.length; i++){
+    console.log("🚀 ~ file: bubbleSort.js ~ line 8 ~ arr.length", arr.length)
 
         for(let j=1; j < arr.length; j++){
 
-            
             yield arrStore.compare(i,j, colorCompare)
-            if(arr[j-1] > arrStore[j]){
+            if(arr[j-1] > arr[j]){
                 // temp = arr[j-1];
                 // arr[j-1] = arr[j];
                 // arr[j] = temp;
@@ -19,11 +19,6 @@ export const bubbleSort = function*(arrStore) {
         }
 
     }
-
-    return arr;
-
 };
 
-// const animate = () => {};
-
-// console.log(bubbleSort([5, 20, 10, 14, 3, 2]));
+// export default bubbleSort;

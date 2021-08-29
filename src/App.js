@@ -13,16 +13,16 @@ const  App = observer(() => {
 
   useEffect(() => {
   //   setArr([5, 20, 10, 14, 3, 2]);
-    animationStore(arrayStore);
+    // animationStore(arrayStore);
   }, []);
 
-  const handleSort = async () => {
+  const handleSort = () => {
 
     // const test = bubbleSortStore.sortedArray;
     // console.log("🚀 ~ file: App.js ~ line 21 ~ handleSort ~ test", test)
 
-    animationStore.startAnimation(bubbleSort)
-    
+    animationStore.startAnimation(bubbleSort, arrayStore)
+
   }
 
   return (

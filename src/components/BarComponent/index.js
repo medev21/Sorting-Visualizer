@@ -4,15 +4,8 @@ import { UseStores } from "../../mobx/UseStore";
 
 const BarComponent = observer(({ arr }) => {
 
-    // const [arr, setArr] = useState([]);
-
-    // useEffect(())
-
     const { bubbleSortStore } = UseStores();
-    // const arr = bubbleSortStore.sortedArray;
-    console.log("🚀 ~ file: index.js ~ line 9 ~ BarComponent ~ arr", arr)
-
-    // const arr = [5, 20, 10, 14, 3, 2];
+    // console.log("🚀 ~ file: index.js ~ line 9 ~ BarComponent ~ arr", arr)
 
     return(
         <div className="bar-section">

@@ -3,52 +3,45 @@ import { makeObservable, observable, action } from 'mobx';
 
 export class AnimationStore {
 
-    // arrayStore;
+    generator =  null
+    genFunc = null;
+    delay = 500;
 
-    constructor(ArrayStore) {
+    constructor(genFunc, generator, delay) {
         makeObservable(this, {
+            genFunc: observable,
             generator: observable,
-            generatorFunction: observable,
-            // arrayStore: observable,
+            delay: observable,
             startAnimation: action,
-            pauseAnimation: action
-        });
+            pauseAnimation: action,
+        })
 
-        this.arrayStore = ArrayStore;
+        this.generator = generator;
+        this.genFunc = genFunc;
+        this.delay = delay;
     }
 
-    // arr = [5, 20, 10, 14, 3, 2];
-    // arrayStore = ArrayStore
-    generator = null;
-    generatorFunction = null
-
-    startAnimation = (genFunc) => {
-
-        if(genFunc !== this.generatorFunction){
-            this.generatorFunction = genFunc;
-            // console.log("ArrayStore", ArrayStore)
-            console.log("arrayStore line30", this.arrayStore)
-
-            // this.generator = genFunc(this.arrayStore);
+    startAnimation = (genFunc, arrStore) => {
+        console.log(genFunc)
+        if(genFunc !== this.genFunc) {
+            this.genFunc = genFunc;
+            console.log("arrayStore line30", arrStore.arr);
+            // this.generator = this.generatorFunction(arrStore);
+            this.generator = genFunc(arrStore);
+            console.log(this)
         }
 
-        // this.animation = setInterval(() => {
+        this.animation = setInterval(() => {
+            console.log(this.generator.next())
+            const action = this.generator.next();
+            if(action.done){
+                this.pauseAnimation();
+            }
+        }, this.delay);
 
-        //     const action = this.generator.next();
-        //     console.log("🚀 ~ file: animationStore.js ~ line 29 ~ AnimationStore ~ this.animation=setInterval ~ action", action)
-
-        //     if(action.done){
-
-        //     }
-        // }, 3000);
     }
 
-        
-
-        
-
-
-    pauseAnimation = () => {
+    pauseAnimation() {
 
         console.log("PAUSING ANIMATION", this.animation)
 
