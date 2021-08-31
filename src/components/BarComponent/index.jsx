@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { observer } from "mobx-react-lite";
-import { UseStores } from "../../mobx/UseStore";
 
 const BarComponent = observer(({ arr }) => {
 
-    const { bubbleSortStore } = UseStores();
-    // console.log("🚀 ~ file: index.js ~ line 9 ~ BarComponent ~ arr", arr)
 
     return(
         <div className="bar-section">
