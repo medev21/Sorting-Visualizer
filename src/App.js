@@ -27,7 +27,7 @@ const  App = observer(() => {
 
   return (
     <div className="App">
-      <button onClick={handleSort}>sort</button>
+      <button     onClick={handleSort}>sort</button>
       <BarComponent arr={arrayStore.arr}/>
     </div>
   );
