@@ -3,7 +3,6 @@ import { observer } from "mobx-react-lite";
 
 const BarComponent = observer(({ arr }) => {
 
-
     return(
         <div className="bar-section">
             <ul>
